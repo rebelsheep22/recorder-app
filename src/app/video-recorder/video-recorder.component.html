@@ -1,0 +1,15 @@
+<div>
+    <div>
+      <video id="camera-feed" autoplay muted></video>
+    </div>
+    
+    <div *ngIf="isRecording" class="recording-indicator">
+      <span class="recording-dot"></span> Recording...
+    </div>
+  
+    <button (click)="startRecording()" [disabled]="isRecording">Start Video Recording</button>
+    <button (click)="stopRecording()" [disabled]="!isRecording">Stop Video Recording</button>
+  
+    <video *ngIf="videoURL" [src]="videoURL" controls></video>
+  </div>
+  
